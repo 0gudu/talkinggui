@@ -36,7 +36,7 @@
 </body>
 <script src="jquery.js"></script>
 <script>
-    alert("funciona no chrome");
+
     var audioElement = $("#audioPlayer")[0];
 
     var sim = $("#SIM")[0];
@@ -125,7 +125,8 @@
                     $('#startButton').prop('disabled', true);
                     $('#stopButton').prop('disabled', false);
                 } else {
-                    console.error('SpeechRecognition não é suportado neste navegador.');
+                    alert('não é suportado neste navegador.');
+
                 }
             
         } else if (x == 0){
