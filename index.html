@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>talking gui</title>
-    <!-- Adicione a ligação ao Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        body {
-            height: 100vh; /* 100% da altura da tela */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Seu Site</title>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #343a40;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0;
+    }
+
+    #guiverme, #botao {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="assets/png/guisentado.png" id="guiverme" alt="Personagem Sentado" width="70%" class="mx-auto d-block">
-        <img src="assets/png/ligar.png" onclick="ligar()" id="botao" width="20%" class="mx-auto d-block">
-    </div>
+
+  <header>
+    <h1>talking gui</h1>
+  </header>
+    
+  <div class="container mt-2">
+    <img src="assets/png/guisentado.png" id="guiverme" alt="Personagem Sentado" width="60%" class="mx-auto d-block">
+    <img src="assets/png/ligar.png" onclick="ligar()" id="botao" width="20%" class="mx-auto d-block">
+  </div>
 
     <!-- Adicione a ligação ao Bootstrap JS e ao jQuery (opcional, necessário para alguns recursos do Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -126,7 +145,7 @@
                     $('#stopButton').prop('disabled', false);
                 } else {
                     alert('não é suportado neste navegador.');
-
+                    ligui(0);
                 }
             
         } else if (x == 0){
