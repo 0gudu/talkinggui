@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>BALA NO ALVO PRODUÇÕES</title>
+  <title>TALKING GUI</title>
   <style>
     body {
       min-height: 100vh;
@@ -46,7 +46,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <audio id="audioPlayer" src="assets/mp3/tocando.mp3"></audio>
+    <audio id="tocando" src="assets/mp3/tocando.mp3"></audio>
     <audio id="SIM" src="assets/mp3/SIM.mp3"></audio>
     <audio id="NAO" src="assets/mp3/NAO.mp3"></audio>
     <audio id="TALVEZ" src="assets/mp3/TALVEZ.mp3"></audio>
@@ -56,8 +56,7 @@
 <script src="jquery.js"></script>
 <script>
 
-    var audioElement = $("#audioPlayer")[0];
-
+    var tocando = $("#tocando")[0];
     var sim = $("#SIM")[0];
     var nao = $("#NAO")[0];
     var talvez = $("#TALVEZ")[0];
@@ -66,24 +65,25 @@
 
     var andamento = 0;
     let recognition;
+
+
     function ligar() {
         if (andamento == 0){
-            audioElement.play();
             setTimeout(() => {
                 ligui(1);
             }, 2000);
-                ligui(3);
-            
+            ligui(3);
         }else {
             ligui(0);
         }
     }
 
     function ligui(x){
-        if (x == 1) {
+        if (x === 1 && andamento === 0) {
             $("#guiverme").attr("src", "assets/png/guicomsaco.png");
             $("#botao").attr("src", "assets/png/desligar.png");
             andamento = 1;
+
             if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
                     recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 
@@ -91,15 +91,11 @@
                         console.log('Iniciou a detecção de fala.');
                     };
 
-                    recognition.onresult = function(event) {
-                        const transcript = event.results[0][0].transcript;
-                        console.log('Texto reconhecido:', transcript);
-                        // Aqui você pode chamar a função desejada quando a fala é detectada
-                    };
-
                     recognition.onend = function() {
+                        
                         console.log('Parou a detecção de fala.');
-                        const escolha = Math.floor(Math.random() * 5) + 1;
+                        if (andamento == 1){
+                            const escolha = Math.floor(Math.random() * 5) + 1;
                         switch(escolha){
                             case 1:
                                 console.log(escolha);
@@ -134,15 +130,10 @@
                                     ligui(0);
                             break;
                         }
-                        
-                        
-                        $('#stopButton').prop('disabled', true);
-                        $('#startButton').prop('disabled', false);
+                        }
                     };
 
                     recognition.start();
-                    $('#startButton').prop('disabled', true);
-                    $('#stopButton').prop('disabled', false);
                 } else {
                     alert('não é suportado neste navegador.');
                     ligui(0);
@@ -152,16 +143,12 @@
             $("#guiverme").attr("src", "assets/png/guisentado.png");
             $("#botao").attr("src", "assets/png/ligar.png");
             desligar.play();
+            recognition.stop();
             andamento = 0;
         }else if (x == 3){
-            audioElement.play();
+            tocando.play();
         }
     }
-            $('#stopButton').on('click', function() {
-                if (recognition) {
-                    recognition.stop();
-                }
-            });
 
 </script>
 </html>
