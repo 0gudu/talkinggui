@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detecção de Início e Fim de Fala</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="startButton">Iniciar Detecção</button>
+    <button id="stopButton" disabled>Parar Detecção</button>
+
+    <script>
+        $(document).ready(function(){
+            let recognition;
+
+            $('#startButton').on('click', function() {
+                if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+                    recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+                    recognition.onstart = function() {
+                        console.log('Iniciou a detecção de fala.');
+                    };
+
+                    recognition.onresult = function(event) {
+                        const transcript = event.results[0][0].transcript;
+                        console.log('Texto reconhecido:', transcript);
+                        // Aqui você pode chamar a função desejada quando a fala é detectada
+                    };
+
+                    recognition.onend = function() {
+                        console.log('Parou a detecção de fala.');
+                        $('#stopButton').prop('disabled', true);
+                        $('#startButton').prop('disabled', false);
+                    };
+
+                    recognition.start();
+                    $('#startButton').prop('disabled', true);
+                    $('#stopButton').prop('disabled', false);
+                } else {
+                    console.error('SpeechRecognition não é suportado neste navegador.');
+                }
+            });
+
+            $('#stopButton').on('click', function() {
+                if (recognition) {
+                    recognition.stop();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
