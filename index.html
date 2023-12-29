@@ -97,60 +97,9 @@
                         console.log('Parou a detecção de fala.');
                         if (andamento == 1){
                             const escolha = Math.floor(Math.random() * 5) + 1;
-                        switch(escolha){
-                            case 1:
-                                console.log(escolha);
-                                sim.play();
-                                desligar = Math.floor(Math.random() * 5) + 1;
-                                if (desligar == 1){
-                                    setTimeout(() => {
-                                        ligui(0);
-                                    }, 1000);
-                                }
-                                andamento = 0;
-                                ligui(1);
-                            break;
-                            case 2:
-                                console.log(escolha);
-                                nao.play();
-                                desligar = Math.floor(Math.random() * 5) + 1;
-                                if (desligar == 1){
-                                    setTimeout(() => {
-                                        ligui(0);
-                                    }, 1000);
-                                }
-                                andamento = 0;
-                                ligui(1);
-                            break;
-                            case 3:
-                                console.log(escolha);
-                                talvez.play();
-                                desligar = Math.floor(Math.random() * 5) + 1;
-                                if (desligar == 1){
-                                    setTimeout(() => {
-                                        ligui(0);
-                                    }, 1000);
-                                }
-                                andamento = 0;
-                                ligui(1);
-                            break;
-                            case 4:
-                                console.log(escolha);
-                                xingao.play();
-                                desligar = Math.floor(Math.random() * 5) + 1;
-                                if (desligar == 1){
-                                    setTimeout(() => {
-                                        ligui(0);
-                                    }, 1000);
-                                }
-                                andamento = 0;
-                                ligui(1);
-                            break;
-                            case 5:
-                                console.log(escolha);
-                                ligui(0);
-                            break;
-                        }
+                            setTimeout(() => {
+                                respostas(escolha);
+                            }, 1000);
                         }
                     };
 
@@ -171,6 +120,73 @@
             tocando.play();
         }
     }
+
+    function respostas(x) {
+    switch (x) {
+        case 1:
+            console.log(x);
+            sim.play();
+            desligar = Math.floor(Math.random() * 5) + 1;
+            if (desligar == 1) {
+                setTimeout(() => {
+                    ligui(0);
+                }, 1000);
+            }
+            andamento = 0;
+            setTimeout(() => {
+                    ligui(1);
+                }, 700);
+            break;
+        case 2:
+            console.log(x);
+            nao.play();
+            desligar = Math.floor(Math.random() * 5) + 1;
+            if (desligar == 1) {
+                setTimeout(() => {
+                    ligui(0);
+                }, 1000);
+            }
+            andamento = 0;
+            setTimeout(() => {
+                    ligui(1);
+                }, 700);
+            break;
+        case 3:
+            console.log(x);
+            talvez.play();
+            desligar = Math.floor(Math.random() * 5) + 1;
+            if (desligar == 1) {
+                setTimeout(() => {
+                    ligui(0);
+                }, 1000);
+            }
+            andamento = 0;
+            setTimeout(() => {
+                    ligui(1);
+                }, 700);
+            break;
+        case 4:
+            console.log(x);
+            xingao.play();
+            desligar = Math.floor(Math.random() * 5) + 1;
+            if (desligar == 1) {
+                setTimeout(() => {
+                    ligui(0);
+                }, 1000);
+            }
+            andamento = 0;
+            setTimeout(() => {
+                    ligui(1);
+                }, 700);
+            break;
+        case 5:
+            console.log(x);
+            ligui(0);
+            break;
+        default:
+            console.log("Invalid choice");
+    }
+}
 
 </script>
 </html>
