@@ -81,7 +81,10 @@
             }, 2000);
             ligui(3);
         }else {
-            ligui(0);
+            inval = intervalo + 1;
+            setTimeout(() => {
+                ligui(0);
+            }, inval);
         }
     }
 
