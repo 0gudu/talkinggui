@@ -40,6 +40,8 @@
   <div class="container mt-2">
     <img src="assets/png/guisentado.png" id="guiverme" alt="Personagem Sentado" width="60%" class="mx-auto d-block">
     <img src="assets/png/ligar.png" onclick="ligar()" id="botao" width="20%" class="mx-auto d-block">
+    <input type="number" value="0" id="intervalo">
+    <button onclick="mudarintervalo()">intervalo</button>
   </div>
 
     <!-- Adicione a ligação ao Bootstrap JS e ao jQuery (opcional, necessário para alguns recursos do Bootstrap) -->
@@ -56,7 +58,7 @@
 </body>
 <script src="src/includes/jquery.js"></script>
 <script>
-
+    intervalo = 0;
     var tocando = $("#tocando")[0];
     var sim = $("#SIM")[0];
     var nao = $("#NAO")[0];
@@ -67,6 +69,10 @@
     var andamento = 0;
     let recognition;
 
+    function mudarintervalo(){
+        intervalo = $("#intervalo").val();
+        console.log(intervalo);
+    }
 
     function ligar() {
         if (andamento == 0){
@@ -99,7 +105,7 @@
                             const escolha = Math.floor(Math.random() * 5) + 1;
                             setTimeout(() => {
                                 respostas(escolha);
-                            }, 1000);
+                            }, intervalo);
                         }
                     };
 
@@ -135,7 +141,7 @@
             andamento = 0;
             setTimeout(() => {
                     ligui(1);
-                }, 700);
+                }, intervalo);
             break;
         case 2:
             console.log(x);
@@ -149,7 +155,7 @@
             andamento = 0;
             setTimeout(() => {
                     ligui(1);
-                }, 700);
+                }, intervalo);
             break;
         case 3:
             console.log(x);
@@ -163,7 +169,7 @@
             andamento = 0;
             setTimeout(() => {
                     ligui(1);
-                }, 700);
+                }, intervalo);
             break;
         case 4:
             console.log(x);
@@ -177,7 +183,7 @@
             andamento = 0;
             setTimeout(() => {
                     ligui(1);
-                }, 700);
+                }, intervalo);
             break;
         case 5:
             console.log(x);
