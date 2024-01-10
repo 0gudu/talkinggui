@@ -13,6 +13,6 @@ Bem-vindo ao TalkingGui, onde você pode conversar com Guilherme virtualmente! E
 2. Clique no botão de fala e comece a conversar com Guilherme virtual.
 3. Divirta-se explorando as diferentes respostas e interações.
 
-**Nota:** Somente navegadores compatíveis com WebSpeechApi serão compatíveis. Se estiver acessando pelo celular, ajuste o intervalo no campo na parte de baixo da página para 2000 e clique no botão para confirmar, assim, ele conseguirá ouvir e responder no tempo correto.
+**Nota:** Somente navegadores compatíveis com WebSpeechApi serão compatíveis. Se estiver acessando pelo celular, ajuste o intervalo no campo na parte inferior da página para 2000 e clique no botão para confirmar, assim, ele conseguirá ouvir e responder no tempo correto.
 
 Não se divirta conversando com Guilherme virtualmente! 😸
