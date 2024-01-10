@@ -1,6 +1,6 @@
 # TalkingGui
 
-Bem-vindo ao TalkingGui, onde você pode conversar com Guilherme virtualmente! Este projeto foi desenvolvido usando HTML e JavaScript para criar uma experiência interativa semelhante ao jogo Talking Ben, mas com o seu amigo Guilherme.
+Bem-vindo ao TalkingGui, onde você pode conversar com Guilherme virtualmente! Este projeto foi desenvolvido usando HTML e JavaScript para criar uma experiência interativa semelhante ao jogo Talking Ben, mas com o amigo Guilherme.
 
 ## Funcionalidades
 
