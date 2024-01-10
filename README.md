@@ -15,4 +15,6 @@ Bem-vindo ao TalkingGui, onde você pode conversar com Guilherme virtualmente! E
 3. Divirta-se explorando as diferentes respostas e interações.
 
 //caso você acesse pelo celular seria interessante ajustar o intervalo com o campo na parte de baixo da pagina para 2000 e clicar no botao para confirmar, assim, ele consegue te couvir e responder no tenpo correto
-Divirta-se conversando com o Guilherme virtual! 🎉
+
+
+Não se divirta conversando com Guilherme virtualmente! 😸
