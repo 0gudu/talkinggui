@@ -9,12 +9,10 @@ Bem-vindo ao TalkingGui, onde você pode conversar com Guilherme virtualmente! E
 
 ## Como Utilizar
 
-//somente navegadores compatíveis com WebSpeechApi serão compatíveis 
 1. Abra o projeto no seu navegador ou acesse [TalkingGui on GitHub Pages](link-do-seu-projeto).
 2. Clique no botão de fala e comece a conversar com Guilherme virtual.
 3. Divirta-se explorando as diferentes respostas e interações.
 
-//caso você acesse pelo celular seria interessante ajustar o intervalo com o campo na parte de baixo da pagina para 2000 e clicar no botao para confirmar, assim, ele consegue te couvir e responder no tenpo correto
-
+**Nota:** Somente navegadores compatíveis com WebSpeechApi serão compatíveis. Se estiver acessando pelo celular, ajuste o intervalo no campo na parte de baixo da página para 2000 e clique no botão para confirmar, assim, ele conseguirá ouvir e responder no tempo correto.
 
 Não se divirta conversando com Guilherme virtualmente! 😸
